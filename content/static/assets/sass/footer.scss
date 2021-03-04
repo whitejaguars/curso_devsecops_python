@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "Roboto-regular";
+    src: url("/assets/fonts/web/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/assets/fonts/web/Roboto-Bold.ttf");
+}
+$font-Roboto: 'Roboto', sans-serif;
+$font-Roboto-regular: 'Roboto-regular', sans-serif;
+
+footer{
+    background: #272727!important;
+
+
+    .footer-btnTop__style{
+        position: absolute;
+        right: 1.5rem;
+        padding: 9px 15px;
+        z-index: 2;
+        background: #1A1A1A!important;
+    }
+
+    .footer-a_up{
+        color: #fff;
+    }
+
+    h1{
+        font-size: 1.8rem;
+        font-family: $font-Roboto;
+        font-weight: 700;
+    }
+
+
+    .footer-btnTop__style::before{
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        position: absolute;
+        top: -115px;
+        left: 50%;
+    }
+
+    h6{
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: -.04rem;
+        text-transform: uppercase;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    i{
+        span{
+            font-family: $font-Roboto-regular;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    }
+
+    p, a{
+        transition: .3s;
+    }
+
+    a:hover{
+        p{
+            text-decoration:none;
+            color: #41ade7!important;
+        }
+    }
+
+    .icon-email_icon{
+        font-size: 13px;
+    }
+
+    .display-table{
+        display: table;
+        margin: auto;
+    }
+
+    .footer__color-change{
+        background: #1a1a1a;
+
+        .icon-style{
+            font-size: 2rem;
+            color: #fff;
+            transition: 0.4s;
+        }
+    }
+}
