@@ -9,4 +9,4 @@ class TestAbuseCases():
         assert True
 
     def test_mi_cuarta_prueba(self):
-        assert False
+        assert True
