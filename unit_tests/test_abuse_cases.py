@@ -10,3 +10,6 @@ class TestAbuseCases():
 
     def test_mi_cuarta_prueba(self):
         assert True
+
+    def test_mi_quinta_prueba(self):
+        assert True
