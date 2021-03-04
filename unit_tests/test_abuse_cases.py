@@ -7,3 +7,6 @@ class TestAbuseCases():
 
     def test_mi_tercera_prueba(self):
         assert True
+
+    def test_mi_cuarta_prueba(self):
+        assert True
