@@ -37,14 +37,14 @@ then
     " | sudo tee -a /etc/systemd/system/wj-demo.service
 fi
 
-sudo rm -rf /opt/wj-demo/static
+sudo rm -rf /opt/wj-demo/content
 sudo rm -rf /opt/wj-demo/*.py
 sudo rm -rf /opt/wj-demo/application
 echo "Move application Files"
 sudo mv -f *.py /opt/wj-demo/
 sudo mv -f application /opt/wj-demo/
 echo "Deploy static content"
-sudo mv -f static /opt/wj-demo/
+sudo mv -f content /opt/wj-demo/
 
 echo "Start API Gunicorn Supervisor"
 sudo systemctl start wj-demo
