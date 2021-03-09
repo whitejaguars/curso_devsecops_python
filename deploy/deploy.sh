@@ -8,6 +8,7 @@ then
     echo "Not installed, installing"
     echo "Create folder structure"
     sudo mkdir -p /opt/wj-demo/
+    sudo mkdir -p /var/log/wj-demo/
     echo "[!] Add python virtual environment"
     sudo python3 -m venv /opt/wj-demo/venv/
     pythonpip="/opt/wj-demo/venv/bin/pip"
