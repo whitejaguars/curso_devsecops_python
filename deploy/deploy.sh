@@ -51,7 +51,7 @@ sudo systemctl start wj-demo
 echo "Deploy Completed"
 sleep 3
 echo "Sanity Check"
-msg="$(nc -vz localhost 8000 2>&1)"
+msg="$(nc -vz $1 8000 2>&1)"
 if [[ $msg == *succeeded* ]];
 then
         echo "Gunicorn listening on port 8000: Pass"
