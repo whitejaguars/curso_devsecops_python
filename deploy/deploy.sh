@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "Start the Deploy process:"
-cd /deploy || exit
 echo "Stop API Gunicorn Supervisor"
 sudo systemctl stop wj-demo
 msg=$(sudo systemctl status wj-demo 2>&1)
@@ -31,7 +30,7 @@ then
     Group=root
     WorkingDirectory=/opt/wj-demo/
     Environment=\"PATH=/opt/wj-demo/venv/bin\"
-    ExecStart=/opt/wj-demo/venv/bin/gunicorn --workers 3 wsgi:application -b localhost:8000 --access-logfile /var/log/wj-demo/access.log --error-logfile /var/log/wj-demo/error.log --log-level=error
+    ExecStart=/opt/wj-demo/venv/bin/gunicorn --workers 3 wsgi:application -b $1:8000 --access-logfile /var/log/wj-demo/access.log --error-logfile /var/log/wj-demo/error.log --log-level=error
 
     [Install]
     WantedBy=multi-user.target
@@ -60,7 +59,7 @@ else
         echo "Gunicorn listening on port 8000: Failed"
         exit 1
 fi
-msg="$(curl --max-time 5 http://localhost:8000/ 2>&1)"
+msg="$(curl --max-time 5 http://$1:8000/ 2>&1)"
 if [[ $msg == *WhiteJaguars* ]]; then
         echo "Site Available: Pass"
         exit 0
