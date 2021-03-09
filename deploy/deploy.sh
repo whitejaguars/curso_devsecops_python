@@ -31,7 +31,7 @@ then
     Group=root
     WorkingDirectory=/opt/wj-demo/
     Environment=\"PATH=/opt/wj-demo/venv/bin\"
-    ExecStart=/opt/wj-demo/venv/bin/gunicorn --workers 3 wsgi:application -b $1:8000 --access-logfile /var/log/wj-demo/access.log --error-logfile /var/log/wj-demo/error.log --log-level=error
+    ExecStart=/opt/wj-demo/venv/bin/gunicorn --workers 3 wsgi:app -b $1:8000 --access-logfile /var/log/wj-demo/access.log --error-logfile /var/log/wj-demo/error.log --log-level=error
 
     [Install]
     WantedBy=multi-user.target
