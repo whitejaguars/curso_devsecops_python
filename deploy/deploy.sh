@@ -36,6 +36,7 @@ then
     [Install]
     WantedBy=multi-user.target
     " | sudo tee -a /etc/systemd/system/wj-demo.service
+    sudo systemctl enable wj-demo
 fi
 
 sudo rm -rf /opt/wj-demo/content
