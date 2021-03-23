@@ -39,10 +39,5 @@ pipeline {
                 // waitForQualityGate abortPipeline: true
             }
         }
-        stage("Deploy"){
-            steps {
-                sh "bash deploy/deploy.sh 192.168.1.60"
-            }
-        }
     }
 }
