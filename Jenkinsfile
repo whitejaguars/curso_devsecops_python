@@ -28,7 +28,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarQube';
                     withSonarQubeEnv('SonarQube') {
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=CICD_Python -Dsonar.projectName=CICD_Python -Dsonar.sources=application -Dsonar.python.xunit.reportPath=pytest-report.xml"
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=CICD_Python_{env.BRANCH_NAME} -Dsonar.projectName=CICD_Python_{env.BRANCH_NAME} -Dsonar.sources=application -Dsonar.python.xunit.reportPath=pytest-report.xml"
                     }
                 }
             }
