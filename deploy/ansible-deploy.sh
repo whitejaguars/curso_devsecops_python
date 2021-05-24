@@ -3,9 +3,9 @@ echo "Start the Deploy process:"
 echo "Stop API Gunicorn Supervisor"
 sudo systemctl stop wj-demo
 msg=$(sudo systemctl status wj-demo 2>&1)
+cd /deploy/CICD_Python/
 if [[ $msg == *found* ]];
 then
-    cd /deploy/
     echo "Not installed, installing"
     echo "Create folder structure"
     sudo mkdir -p /opt/wj-demo/
